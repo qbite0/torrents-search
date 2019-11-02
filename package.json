@@ -1,0 +1,13 @@
+{
+  "name": "torrents-search",
+  "version": "0.0.1",
+  "description": "Searching torrents on russian torrent trackers",
+  "main": "index.js",
+  "scripts": {},
+  "author": "qBite",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "needle": "^2.4.0"
+  }
+}
