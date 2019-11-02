@@ -1,11 +1,23 @@
-const nnmclub = require('./templates/nnmclub.js')
-const rutor = require('./templates/rutor.js')
-
-async function search(title) {
-    var nnm = await nnmclub(title)
-    var rut = await rutor(title)
-    var res = nnm.concat(rut)
-    return res
+const Trackers = {
+    "nnmclub": require('./trackers/nnmclub'),
+    "rutor": require('./trackers/rutor')
 }
 
-module.exports = search
+class Client {
+    constructor(trackers) {
+        this.trackers = []
+        for (var i = 0; i < trackers.length; i++) {
+            this.trackers.push(Trackers[trackers[i]])
+        }
+    }
+
+    async search(title) {
+        let torrents = []
+        for (var i = 0; i < this.trackers.length; i++) {
+            torrents = torrents.concat(await this.trackers[i].search(title))
+        }
+        return torrents
+    }
+}
+
+module.exports = { Client }
