@@ -1,6 +1,7 @@
 const Trackers = {
-    "nnmclub": require('./trackers/nnmclub'),
-    "rutor": require('./trackers/rutor')
+    "nnmclub": require('./trackers/nnmclub.js'),
+    "rutor": require('./trackers/rutor.js'),
+    "tfile": require('./trackers/tfile.js')
 }
 
 class Client {
