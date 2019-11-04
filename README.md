@@ -2,14 +2,15 @@
 Поиск торрентов на русских торрент трекерах.
 
 ## Поддерживаемые торрент трекеры
-- NNM-Club
-- Rutor org
+- NNM-Club (nnmclub)
+- Rutor org (rutor)
+- TFile me (tfile)
 
 ##  Пример использования
 ```js
 const TSearch = require('./torrents-search')
 
-const Client = new TSearch.Client(["rutor", "nnmclub"])
+const Client = new TSearch.Client(["rutor", "nnmclub", "tfile"])
 
 async function main() {
   const results = await Client.search('Minecraft') // ;D
@@ -44,3 +45,13 @@ main()
   'Пиры': '1  0'
 }
 ```
+
+## Изменения
+### 0.0.2
+- Переписан код
+- Добавлен tfile.me
+### 0.0.1
+- Основной код
+- Добавлены трекеры:
+  - NNM-Club
+  - Rutor org
